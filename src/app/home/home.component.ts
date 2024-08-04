@@ -26,4 +26,23 @@ export class HomeComponent implements OnInit {
 
   }
 
+  submit() {
+
+    const value:any = document.getElementById('value')
+    const body = {
+      
+      name: value.value
+
+    }
+
+    this.shared.postData(body).subscribe((config) => {
+
+      console.log('posted',config)
+
+    }, error => (console.log('failed posting',error)))
+
+    window.location.href= "/"
+
+  }
+
 }

@@ -15,6 +15,12 @@ export class SharedService {
   getData(): Observable<any> {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/ditto');
   }
+
+  postData(body:any): Observable<any> {
+
+    return this.http.post('http://localhost:3000/test1',body)
+
+  }
  
 
 }
